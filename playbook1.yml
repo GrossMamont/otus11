@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: true
+  vars:
+    nginx_listen_port: 8080
+  tasks: 
+
+  - name: GRUB_TIMEOUT_STYLE=hidden
+    ansible.builtin.lineinfile:
+      path: /etc/default/grub
+      regexp: '^GRUB_TIMEOUT_STYLE=hidden'
+      line: 'GRUB_TIMEOUT_STYLE=menu'
+      state: present
+
+  - name: GRUB_TIMEOUT=10
+    ansible.builtin.lineinfile:
+      #path: /etc/default/grub.d/50-cloudimg-settings.cfg
+      path: /etc/default/grub
+      regexp: '^GRUB_TIMEOUT=0'
+      line: 'GRUB_TIMEOUT=30'
+      state: present
+
+  - name: GRUB_TIMEOUT=10
+    ansible.builtin.lineinfile:
+      path: /etc/default/grub
+      regexp: '^#GRUB_TERMINAL=console'
+      line: 'GRUB_TERMINAL=console'
+      state: present

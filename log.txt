@@ -1,0 +1,898 @@
+vagrant up
+Bringing machine 'rpm' up with 'virtualbox' provider...
+==> rpm: Importing base box 'dkd/ubuntu-1804-lvm'...
+==> rpm: Matching MAC address for NAT networking...
+==> rpm: Checking if box 'dkd/ubuntu-1804-lvm' version '1.0.1' is up to date...
+==> rpm: Setting the name of the VM: 11_rpm_1729672907346_76361
+==> rpm: Clearing any previously set network interfaces...
+==> rpm: Preparing network interfaces based on configuration...
+    rpm: Adapter 1: nat
+    rpm: Adapter 2: hostonly
+==> rpm: Forwarding ports...
+    rpm: 22 (guest) => 2222 (host) (adapter 1)
+==> rpm: Running 'pre-boot' VM customizations...
+==> rpm: Booting VM...
+==> rpm: Waiting for machine to boot. This may take a few minutes...
+    rpm: SSH address: 127.0.0.1:2222
+    rpm: SSH username: vagrant
+    rpm: SSH auth method: private key
+==> rpm: Machine booted and ready!
+==> rpm: Checking for guest additions in VM...
+    rpm: The guest additions on this VM do not match the installed version of
+    rpm: VirtualBox! In most cases this is fine, but in rare cases it can
+    rpm: prevent things such as shared folders from working properly. If you see
+    rpm: shared folder errors, please make sure the guest additions within the
+    rpm: virtual machine match the version of VirtualBox you have installed on
+    rpm: your host and reload your VM.
+    rpm: 
+    rpm: Guest Additions Version: 5.2.18
+    rpm: VirtualBox Version: 6.1
+==> rpm: Setting hostname...
+==> rpm: Configuring and enabling network interfaces...
+==> rpm: Mounting shared folders...
+    rpm: /vagrant => /home/ss/learn/11
+==> rpm: Running provisioner: shell...
+    rpm: Running: inline script
+==> rpm: Running provisioner: shell...
+    rpm: Running: /tmp/vagrant-shell20241023-25278-3nrcea.sh
+    rpm: 
+    rpm: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    rpm: 
+    rpm: Reading package lists...
+    rpm: E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+    rpm: E: Unable to lock directory /var/lib/apt/lists/
+    rpm: 
+    rpm: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    rpm: 
+    rpm: Reading package lists...
+    rpm: Building dependency tree...
+    rpm: Reading state information...
+    rpm: The following additional packages will be installed:
+    rpm:   libssh2-1 mc-data unzip
+    rpm: Suggested packages:
+    rpm:   arj catdvi | texlive-binaries dbview djvulibre-bin genisoimage gv
+    rpm:   imagemagick libaspell-dev links | w3m | lynx odt2txt poppler-utils python
+    rpm:   python-boto python-tz xpdf | pdf-viewer zip
+    rpm: The following NEW packages will be installed:
+    rpm:   libssh2-1 mc mc-data unzip
+    rpm: 0 upgraded, 4 newly installed, 0 to remove and 293 not upgraded.
+    rpm: Need to get 1,953 kB of archives.
+    rpm: After this operation, 8,109 kB of additional disk space will be used.
+    rpm: Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 libssh2-1 amd64 1.8.0-1ubuntu0.1 [73.1 kB]
+    rpm: Get:2 http://archive.ubuntu.com/ubuntu bionic/universe amd64 mc-data all 3:4.8.19-1 [1,238 kB]
+    rpm: Get:3 http://archive.ubuntu.com/ubuntu bionic/universe amd64 mc amd64 3:4.8.19-1 [474 kB]
+    rpm: Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 unzip amd64 6.0-21ubuntu1.2 [168 kB]
+    rpm: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    rpm: Fetched 1,953 kB in 1s (1,839 kB/s)
+    rpm: Selecting previously unselected package libssh2-1:amd64.
+(Reading database ... 72581 files and directories currently installed.)
+    rpm: Preparing to unpack .../libssh2-1_1.8.0-1ubuntu0.1_amd64.deb ...
+    rpm: Unpacking libssh2-1:amd64 (1.8.0-1ubuntu0.1) ...
+    rpm: Selecting previously unselected package mc-data.
+    rpm: Preparing to unpack .../mc-data_3%3a4.8.19-1_all.deb ...
+    rpm: Unpacking mc-data (3:4.8.19-1) ...
+    rpm: Selecting previously unselected package mc.
+    rpm: Preparing to unpack .../mc_3%3a4.8.19-1_amd64.deb ...
+    rpm: Unpacking mc (3:4.8.19-1) ...
+    rpm: Selecting previously unselected package unzip.
+    rpm: Preparing to unpack .../unzip_6.0-21ubuntu1.2_amd64.deb ...
+    rpm: Unpacking unzip (6.0-21ubuntu1.2) ...
+    rpm: Setting up mc-data (3:4.8.19-1) ...
+    rpm: Setting up unzip (6.0-21ubuntu1.2) ...
+    rpm: Setting up libssh2-1:amd64 (1.8.0-1ubuntu0.1) ...
+    rpm: Setting up mc (3:4.8.19-1) ...
+    rpm: Processing triggers for mime-support (3.60ubuntu1) ...
+    rpm: Processing triggers for libc-bin (2.27-3ubuntu1) ...
+    rpm: Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+    rpm: Смотрим конфигурацию загрузчика
+    rpm: # If you change this file, run 'update-grub' afterwards to update
+    rpm: # /boot/grub/grub.cfg.
+    rpm: # For full documentation of the options in this file, see:
+    rpm: #   info -f grub -n 'Simple configuration'
+    rpm: 
+    rpm: GRUB_DEFAULT=0
+    rpm: GRUB_TIMEOUT_STYLE=hidden
+    rpm: GRUB_TIMEOUT=0
+    rpm: GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+    rpm: GRUB_CMDLINE_LINUX_DEFAULT="maybe-ubiquity"
+    rpm: GRUB_CMDLINE_LINUX=""
+    rpm: 
+    rpm: # Uncomment to enable BadRAM filtering, modify to suit your needs
+    rpm: # This works with Linux (no patch required) and with any kernel that obtains
+    rpm: # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+    rpm: #GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+    rpm: 
+    rpm: # Uncomment to disable graphical terminal (grub-pc only)
+    rpm: #GRUB_TERMINAL=console
+    rpm: 
+    rpm: # The resolution used on graphical terminal
+    rpm: # note that you can use only modes which your graphic card supports via VBE
+    rpm: # you can see them in real GRUB with the command `vbeinfo'
+    rpm: #GRUB_GFXMODE=640x480
+    rpm: 
+    rpm: # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+    rpm: #GRUB_DISABLE_LINUX_UUID=true
+    rpm: 
+    rpm: # Uncomment to disable generation of recovery mode menu entries
+    rpm: #GRUB_DISABLE_RECOVERY="true"
+    rpm: 
+    rpm: # Uncomment to get a beep at grub start
+    rpm: #GRUB_INIT_TUNE="480 440 1"
+    rpm: Смотрим /boot/grub/grub.cfg
+    rpm: #
+    rpm: # DO NOT EDIT THIS FILE
+    rpm: #
+    rpm: # It is automatically generated by grub-mkconfig using templates
+    rpm: # from /etc/grub.d and settings from /etc/default/grub
+    rpm: #
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/00_header ###
+    rpm: if [ -s $prefix/grubenv ]; then
+    rpm:   set have_grubenv=true
+    rpm:   load_env
+    rpm: fi
+    rpm: if [ "${next_entry}" ] ; then
+    rpm:    set default="${next_entry}"
+    rpm:    set next_entry=
+    rpm:    save_env next_entry
+    rpm:    set boot_once=true
+    rpm: else
+    rpm:    set default="0"
+    rpm: fi
+    rpm: 
+    rpm: if [ x"${feature_menuentry_id}" = xy ]; then
+    rpm:   menuentry_id_option="--id"
+    rpm: else
+    rpm:   menuentry_id_option=""
+    rpm: fi
+    rpm: 
+    rpm: export menuentry_id_option
+    rpm: 
+    rpm: if [ "${prev_saved_entry}" ]; then
+    rpm:   set saved_entry="${prev_saved_entry}"
+    rpm:   save_env saved_entry
+    rpm:   set prev_saved_entry=
+    rpm:   save_env prev_saved_entry
+    rpm:   set boot_once=true
+    rpm: fi
+    rpm: 
+    rpm: function savedefault {
+    rpm:   if [ -z "${boot_once}" ]; then
+    rpm:     saved_entry="${chosen}"
+    rpm:     save_env saved_entry
+    rpm:   fi
+    rpm: }
+    rpm: function recordfail {
+    rpm:   set recordfail=1
+    rpm:   if [ -n "${have_grubenv}" ]; then if [ -z "${boot_once}" ]; then save_env recordfail; fi; fi
+    rpm: }
+    rpm: function load_video {
+    rpm:   if [ x$feature_all_video_module = xy ]; then
+    rpm:     insmod all_video
+    rpm:   else
+    rpm:     insmod efi_gop
+    rpm:     insmod efi_uga
+    rpm:     insmod ieee1275_fb
+    rpm:     insmod vbe
+    rpm:     insmod vga
+    rpm:     insmod video_bochs
+    rpm:     insmod video_cirrus
+    rpm:   fi
+    rpm: }
+    rpm: 
+    rpm: terminal_input console
+    rpm: terminal_output console
+    rpm: if [ "${recordfail}" = 1 ] ; then
+    rpm:   set timeout=30
+    rpm: else
+    rpm:   if [ x$feature_timeout_style = xy ] ; then
+    rpm:     set timeout_style=hidden
+    rpm:     set timeout=0
+    rpm:   # Fallback hidden-timeout code in case the timeout_style feature is
+    rpm:   # unavailable.
+    rpm:   elif sleep --interruptible 0 ; then
+    rpm:     set timeout=0
+    rpm:   fi
+    rpm: fi
+    rpm: ### END /etc/grub.d/00_header ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/05_debian_theme ###
+    rpm: set menu_color_normal=white/black
+    rpm: set menu_color_highlight=black/light-gray
+    rpm: ### END /etc/grub.d/05_debian_theme ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/10_linux ###
+    rpm: function gfxmode {
+    rpm: 	set gfxpayload="${1}"
+    rpm: 	if [ "${1}" = "keep" ]; then
+    rpm: 		set vt_handoff=vt.handoff=1
+    rpm: 	else
+    rpm: 		set vt_handoff=
+    rpm: 	fi
+    rpm: }
+    rpm: if [ "${recordfail}" != 1 ]; then
+    rpm:   if [ -e ${prefix}/gfxblacklist.txt ]; then
+    rpm:     if hwmatch ${prefix}/gfxblacklist.txt 3; then
+    rpm:       if [ ${match} = 0 ]; then
+    rpm:         set linux_gfx_mode=keep
+    rpm:       else
+    rpm:         set linux_gfx_mode=text
+    rpm:       fi
+    rpm:     else
+    rpm:       set linux_gfx_mode=text
+    rpm:     fi
+    rpm:   else
+    rpm:     set linux_gfx_mode=keep
+    rpm:   fi
+    rpm: else
+    rpm:   set linux_gfx_mode=text
+    rpm: fi
+    rpm: export linux_gfx_mode
+    rpm: menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 	recordfail
+    rpm: 	load_video
+    rpm: 	gfxmode $linux_gfx_mode
+    rpm: 	insmod gzio
+    rpm: 	if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 	insmod part_gpt
+    rpm: 	insmod ext2
+    rpm: 	set root='hd0,gpt2'
+    rpm: 	if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 	else
+    rpm: 	  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 	fi
+    rpm:         linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro  maybe-ubiquity
+    rpm: 	initrd	/initrd.img-4.15.0-54-generic
+    rpm: }
+    rpm: submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 	menuentry 'Ubuntu, with Linux 4.15.0-54-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-4.15.0-54-generic-advanced-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 		recordfail
+    rpm: 		load_video
+    rpm: 		gfxmode $linux_gfx_mode
+    rpm: 		insmod gzio
+    rpm: 		if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 		insmod part_gpt
+    rpm: 		insmod ext2
+    rpm: 		set root='hd0,gpt2'
+    rpm: 		if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 		  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		else
+    rpm: 		  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		fi
+    rpm: 		echo	'Loading Linux 4.15.0-54-generic ...'
+    rpm: 	        linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro  maybe-ubiquity
+    rpm: 		echo	'Loading initial ramdisk ...'
+    rpm: 		initrd	/initrd.img-4.15.0-54-generic
+    rpm: 	}
+    rpm: 	menuentry 'Ubuntu, with Linux 4.15.0-54-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-4.15.0-54-generic-recovery-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 		recordfail
+    rpm: 		load_video
+    rpm: 		insmod gzio
+    rpm: 		if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 		insmod part_gpt
+    rpm: 		insmod ext2
+    rpm: 		set root='hd0,gpt2'
+    rpm: 		if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 		  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		else
+    rpm: 		  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		fi
+    rpm: 		echo	'Loading Linux 4.15.0-54-generic ...'
+    rpm: 	        linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro recovery nomodeset
+    rpm: 		echo	'Loading initial ramdisk ...'
+    rpm: 		initrd	/initrd.img-4.15.0-54-generic
+    rpm: 	}
+    rpm: }
+    rpm: 
+    rpm: ### END /etc/grub.d/10_linux ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/20_linux_xen ###
+    rpm: 
+    rpm: ### END /etc/grub.d/20_linux_xen ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/30_os-prober ###
+    rpm: ### END /etc/grub.d/30_os-prober ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/30_uefi-firmware ###
+    rpm: ### END /etc/grub.d/30_uefi-firmware ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/40_custom ###
+    rpm: # This file provides an easy way to add custom menu entries.  Simply type the
+    rpm: # menu entries you want to add after this comment.  Be careful not to change
+    rpm: # the 'exec tail' line above.
+    rpm: ### END /etc/grub.d/40_custom ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/41_custom ###
+    rpm: if [ -f  ${config_directory}/custom.cfg ]; then
+    rpm:   source ${config_directory}/custom.cfg
+    rpm: elif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then
+    rpm:   source $prefix/custom.cfg;
+    rpm: fi
+    rpm: ### END /etc/grub.d/41_custom ###
+    rpm: Смотрим /etc/default/grub
+    rpm: # If you change this file, run 'update-grub' afterwards to update
+    rpm: # /boot/grub/grub.cfg.
+    rpm: # For full documentation of the options in this file, see:
+    rpm: #   info -f grub -n 'Simple configuration'
+    rpm: 
+    rpm: GRUB_DEFAULT=0
+    rpm: GRUB_TIMEOUT_STYLE=hidden
+    rpm: GRUB_TIMEOUT=0
+    rpm: GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+    rpm: GRUB_CMDLINE_LINUX_DEFAULT="maybe-ubiquity"
+    rpm: GRUB_CMDLINE_LINUX=""
+    rpm: 
+    rpm: # Uncomment to enable BadRAM filtering, modify to suit your needs
+    rpm: # This works with Linux (no patch required) and with any kernel that obtains
+    rpm: # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+    rpm: #GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+    rpm: 
+    rpm: # Uncomment to disable graphical terminal (grub-pc only)
+    rpm: #GRUB_TERMINAL=console
+    rpm: 
+    rpm: # The resolution used on graphical terminal
+    rpm: # note that you can use only modes which your graphic card supports via VBE
+    rpm: # you can see them in real GRUB with the command `vbeinfo'
+    rpm: #GRUB_GFXMODE=640x480
+    rpm: 
+    rpm: # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+    rpm: #GRUB_DISABLE_LINUX_UUID=true
+    rpm: 
+    rpm: # Uncomment to disable generation of recovery mode menu entries
+    rpm: #GRUB_DISABLE_RECOVERY="true"
+    rpm: 
+    rpm: # Uncomment to get a beep at grub start
+    rpm: #GRUB_INIT_TUNE="480 440 1"
+==> rpm: Running provisioner: nginx (ansible)...
+    rpm: Running ansible-playbook...
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [rpm]
+
+TASK [GRUB_TIMEOUT_STYLE=hidden] ***********************************************
+changed: [rpm]
+
+TASK [GRUB_TIMEOUT=10] *********************************************************
+changed: [rpm]
+
+TASK [GRUB_TIMEOUT=10] *********************************************************
+changed: [rpm]
+
+PLAY RECAP *********************************************************************
+rpm                        : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+==> rpm: Running provisioner: shell...
+    rpm: Running: /tmp/vagrant-shell20241023-25278-1v39ik.sh
+    rpm: 
+    rpm: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    rpm: 
+    rpm: Hit:1 http://archive.ubuntu.com/ubuntu bionic InRelease
+    rpm: Hit:2 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
+    rpm: Hit:3 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
+    rpm: Hit:4 http://archive.ubuntu.com/ubuntu bionic-security InRelease
+    rpm: Reading package lists...
+    rpm: Building dependency tree...
+    rpm: Reading state information...
+    rpm: 293 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    rpm: 
+    rpm: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    rpm: 
+    rpm: Reading package lists...
+    rpm: Building dependency tree...
+    rpm: Reading state information...
+    rpm: mc is already the newest version (3:4.8.19-1).
+    rpm: 0 upgraded, 0 newly installed, 0 to remove and 293 not upgraded.
+    rpm: Смотрим конфигурацию загрузчика
+    rpm: # If you change this file, run 'update-grub' afterwards to update
+    rpm: # /boot/grub/grub.cfg.
+    rpm: # For full documentation of the options in this file, see:
+    rpm: #   info -f grub -n 'Simple configuration'
+    rpm: 
+    rpm: GRUB_DEFAULT=0
+    rpm: GRUB_TIMEOUT_STYLE=menu
+    rpm: GRUB_TIMEOUT=30
+    rpm: GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+    rpm: GRUB_CMDLINE_LINUX_DEFAULT="maybe-ubiquity"
+    rpm: GRUB_CMDLINE_LINUX=""
+    rpm: 
+    rpm: # Uncomment to enable BadRAM filtering, modify to suit your needs
+    rpm: # This works with Linux (no patch required) and with any kernel that obtains
+    rpm: # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+    rpm: #GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+    rpm: 
+    rpm: # Uncomment to disable graphical terminal (grub-pc only)
+    rpm: GRUB_TERMINAL=console
+    rpm: 
+    rpm: # The resolution used on graphical terminal
+    rpm: # note that you can use only modes which your graphic card supports via VBE
+    rpm: # you can see them in real GRUB with the command `vbeinfo'
+    rpm: #GRUB_GFXMODE=640x480
+    rpm: 
+    rpm: # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+    rpm: #GRUB_DISABLE_LINUX_UUID=true
+    rpm: 
+    rpm: # Uncomment to disable generation of recovery mode menu entries
+    rpm: #GRUB_DISABLE_RECOVERY="true"
+    rpm: 
+    rpm: # Uncomment to get a beep at grub start
+    rpm: #GRUB_INIT_TUNE="480 440 1"
+    rpm: Смотрим /boot/grub/grub.cfg
+    rpm: #
+    rpm: # DO NOT EDIT THIS FILE
+    rpm: #
+    rpm: # It is automatically generated by grub-mkconfig using templates
+    rpm: # from /etc/grub.d and settings from /etc/default/grub
+    rpm: #
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/00_header ###
+    rpm: if [ -s $prefix/grubenv ]; then
+    rpm:   set have_grubenv=true
+    rpm:   load_env
+    rpm: fi
+    rpm: if [ "${next_entry}" ] ; then
+    rpm:    set default="${next_entry}"
+    rpm:    set next_entry=
+    rpm:    save_env next_entry
+    rpm:    set boot_once=true
+    rpm: else
+    rpm:    set default="0"
+    rpm: fi
+    rpm: 
+    rpm: if [ x"${feature_menuentry_id}" = xy ]; then
+    rpm:   menuentry_id_option="--id"
+    rpm: else
+    rpm:   menuentry_id_option=""
+    rpm: fi
+    rpm: 
+    rpm: export menuentry_id_option
+    rpm: 
+    rpm: if [ "${prev_saved_entry}" ]; then
+    rpm:   set saved_entry="${prev_saved_entry}"
+    rpm:   save_env saved_entry
+    rpm:   set prev_saved_entry=
+    rpm:   save_env prev_saved_entry
+    rpm:   set boot_once=true
+    rpm: fi
+    rpm: 
+    rpm: function savedefault {
+    rpm:   if [ -z "${boot_once}" ]; then
+    rpm:     saved_entry="${chosen}"
+    rpm:     save_env saved_entry
+    rpm:   fi
+    rpm: }
+    rpm: function recordfail {
+    rpm:   set recordfail=1
+    rpm:   if [ -n "${have_grubenv}" ]; then if [ -z "${boot_once}" ]; then save_env recordfail; fi; fi
+    rpm: }
+    rpm: function load_video {
+    rpm:   if [ x$feature_all_video_module = xy ]; then
+    rpm:     insmod all_video
+    rpm:   else
+    rpm:     insmod efi_gop
+    rpm:     insmod efi_uga
+    rpm:     insmod ieee1275_fb
+    rpm:     insmod vbe
+    rpm:     insmod vga
+    rpm:     insmod video_bochs
+    rpm:     insmod video_cirrus
+    rpm:   fi
+    rpm: }
+    rpm: 
+    rpm: terminal_input console
+    rpm: terminal_output console
+    rpm: if [ "${recordfail}" = 1 ] ; then
+    rpm:   set timeout=30
+    rpm: else
+    rpm:   if [ x$feature_timeout_style = xy ] ; then
+    rpm:     set timeout_style=hidden
+    rpm:     set timeout=0
+    rpm:   # Fallback hidden-timeout code in case the timeout_style feature is
+    rpm:   # unavailable.
+    rpm:   elif sleep --interruptible 0 ; then
+    rpm:     set timeout=0
+    rpm:   fi
+    rpm: fi
+    rpm: ### END /etc/grub.d/00_header ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/05_debian_theme ###
+    rpm: set menu_color_normal=white/black
+    rpm: set menu_color_highlight=black/light-gray
+    rpm: ### END /etc/grub.d/05_debian_theme ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/10_linux ###
+    rpm: function gfxmode {
+    rpm: 	set gfxpayload="${1}"
+    rpm: 	if [ "${1}" = "keep" ]; then
+    rpm: 		set vt_handoff=vt.handoff=1
+    rpm: 	else
+    rpm: 		set vt_handoff=
+    rpm: 	fi
+    rpm: }
+    rpm: if [ "${recordfail}" != 1 ]; then
+    rpm:   if [ -e ${prefix}/gfxblacklist.txt ]; then
+    rpm:     if hwmatch ${prefix}/gfxblacklist.txt 3; then
+    rpm:       if [ ${match} = 0 ]; then
+    rpm:         set linux_gfx_mode=keep
+    rpm:       else
+    rpm:         set linux_gfx_mode=text
+    rpm:       fi
+    rpm:     else
+    rpm:       set linux_gfx_mode=text
+    rpm:     fi
+    rpm:   else
+    rpm:     set linux_gfx_mode=keep
+    rpm:   fi
+    rpm: else
+    rpm:   set linux_gfx_mode=text
+    rpm: fi
+    rpm: export linux_gfx_mode
+    rpm: menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 	recordfail
+    rpm: 	load_video
+    rpm: 	gfxmode $linux_gfx_mode
+    rpm: 	insmod gzio
+    rpm: 	if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 	insmod part_gpt
+    rpm: 	insmod ext2
+    rpm: 	set root='hd0,gpt2'
+    rpm: 	if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 	else
+    rpm: 	  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 	fi
+    rpm:         linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro  maybe-ubiquity
+    rpm: 	initrd	/initrd.img-4.15.0-54-generic
+    rpm: }
+    rpm: submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 	menuentry 'Ubuntu, with Linux 4.15.0-54-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-4.15.0-54-generic-advanced-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 		recordfail
+    rpm: 		load_video
+    rpm: 		gfxmode $linux_gfx_mode
+    rpm: 		insmod gzio
+    rpm: 		if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 		insmod part_gpt
+    rpm: 		insmod ext2
+    rpm: 		set root='hd0,gpt2'
+    rpm: 		if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 		  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		else
+    rpm: 		  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		fi
+    rpm: 		echo	'Loading Linux 4.15.0-54-generic ...'
+    rpm: 	        linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro  maybe-ubiquity
+    rpm: 		echo	'Loading initial ramdisk ...'
+    rpm: 		initrd	/initrd.img-4.15.0-54-generic
+    rpm: 	}
+    rpm: 	menuentry 'Ubuntu, with Linux 4.15.0-54-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-4.15.0-54-generic-recovery-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 		recordfail
+    rpm: 		load_video
+    rpm: 		insmod gzio
+    rpm: 		if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 		insmod part_gpt
+    rpm: 		insmod ext2
+    rpm: 		set root='hd0,gpt2'
+    rpm: 		if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 		  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		else
+    rpm: 		  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		fi
+    rpm: 		echo	'Loading Linux 4.15.0-54-generic ...'
+    rpm: 	        linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro recovery nomodeset
+    rpm: 		echo	'Loading initial ramdisk ...'
+    rpm: 		initrd	/initrd.img-4.15.0-54-generic
+    rpm: 	}
+    rpm: }
+    rpm: 
+    rpm: ### END /etc/grub.d/10_linux ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/20_linux_xen ###
+    rpm: 
+    rpm: ### END /etc/grub.d/20_linux_xen ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/30_os-prober ###
+    rpm: ### END /etc/grub.d/30_os-prober ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/30_uefi-firmware ###
+    rpm: ### END /etc/grub.d/30_uefi-firmware ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/40_custom ###
+    rpm: # This file provides an easy way to add custom menu entries.  Simply type the
+    rpm: # menu entries you want to add after this comment.  Be careful not to change
+    rpm: # the 'exec tail' line above.
+    rpm: ### END /etc/grub.d/40_custom ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/41_custom ###
+    rpm: if [ -f  ${config_directory}/custom.cfg ]; then
+    rpm:   source ${config_directory}/custom.cfg
+    rpm: elif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then
+    rpm:   source $prefix/custom.cfg;
+    rpm: fi
+    rpm: ### END /etc/grub.d/41_custom ###
+    rpm: Смотрим /etc/default/grub
+    rpm: # If you change this file, run 'update-grub' afterwards to update
+    rpm: # /boot/grub/grub.cfg.
+    rpm: # For full documentation of the options in this file, see:
+    rpm: #   info -f grub -n 'Simple configuration'
+    rpm: 
+    rpm: GRUB_DEFAULT=0
+    rpm: GRUB_TIMEOUT_STYLE=menu
+    rpm: GRUB_TIMEOUT=30
+    rpm: GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+    rpm: GRUB_CMDLINE_LINUX_DEFAULT="maybe-ubiquity"
+    rpm: GRUB_CMDLINE_LINUX=""
+    rpm: 
+    rpm: # Uncomment to enable BadRAM filtering, modify to suit your needs
+    rpm: # This works with Linux (no patch required) and with any kernel that obtains
+    rpm: # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+    rpm: #GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+    rpm: 
+    rpm: # Uncomment to disable graphical terminal (grub-pc only)
+    rpm: GRUB_TERMINAL=console
+    rpm: 
+    rpm: # The resolution used on graphical terminal
+    rpm: # note that you can use only modes which your graphic card supports via VBE
+    rpm: # you can see them in real GRUB with the command `vbeinfo'
+    rpm: #GRUB_GFXMODE=640x480
+    rpm: 
+    rpm: # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+    rpm: #GRUB_DISABLE_LINUX_UUID=true
+    rpm: 
+    rpm: # Uncomment to disable generation of recovery mode menu entries
+    rpm: #GRUB_DISABLE_RECOVERY="true"
+    rpm: 
+    rpm: # Uncomment to get a beep at grub start
+    rpm: #GRUB_INIT_TUNE="480 440 1"
+==> rpm: Running provisioner: shell...
+    rpm: Running: /tmp/vagrant-shell20241023-25278-fobccz.sh
+    rpm: Обновляем конфигурацию загрузчика и перезагружаемся для проверки
+    rpm: Sourcing file `/etc/default/grub'
+    rpm: Sourcing file `/etc/default/grub.d/50-curtin-settings.cfg'
+    rpm: Generating grub configuration file ...
+    rpm: Found linux image: /boot/vmlinuz-4.15.0-54-generic
+    rpm: Found initrd image: /boot/initrd.img-4.15.0-54-generic
+    rpm: done
+    rpm: # If you change this file, run 'update-grub' afterwards to update
+    rpm: # /boot/grub/grub.cfg.
+    rpm: # For full documentation of the options in this file, see:
+    rpm: #   info -f grub -n 'Simple configuration'
+    rpm: 
+    rpm: GRUB_DEFAULT=0
+    rpm: GRUB_TIMEOUT_STYLE=menu
+    rpm: GRUB_TIMEOUT=30
+    rpm: GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+    rpm: GRUB_CMDLINE_LINUX_DEFAULT="maybe-ubiquity"
+    rpm: GRUB_CMDLINE_LINUX=""
+    rpm: 
+    rpm: # Uncomment to enable BadRAM filtering, modify to suit your needs
+    rpm: # This works with Linux (no patch required) and with any kernel that obtains
+    rpm: # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+    rpm: #GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+    rpm: 
+    rpm: # Uncomment to disable graphical terminal (grub-pc only)
+    rpm: GRUB_TERMINAL=console
+    rpm: 
+    rpm: # The resolution used on graphical terminal
+    rpm: # note that you can use only modes which your graphic card supports via VBE
+    rpm: # you can see them in real GRUB with the command `vbeinfo'
+    rpm: #GRUB_GFXMODE=640x480
+    rpm: 
+    rpm: # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+    rpm: #GRUB_DISABLE_LINUX_UUID=true
+    rpm: 
+    rpm: # Uncomment to disable generation of recovery mode menu entries
+    rpm: #GRUB_DISABLE_RECOVERY="true"
+    rpm: 
+    rpm: # Uncomment to get a beep at grub start
+    rpm: #GRUB_INIT_TUNE="480 440 1"
+    rpm: Смотрим /boot/grub/grub.cfg
+    rpm: #
+    rpm: # DO NOT EDIT THIS FILE
+    rpm: #
+    rpm: # It is automatically generated by grub-mkconfig using templates
+    rpm: # from /etc/grub.d and settings from /etc/default/grub
+    rpm: #
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/00_header ###
+    rpm: if [ -s $prefix/grubenv ]; then
+    rpm:   set have_grubenv=true
+    rpm:   load_env
+    rpm: fi
+    rpm: if [ "${next_entry}" ] ; then
+    rpm:    set default="${next_entry}"
+    rpm:    set next_entry=
+    rpm:    save_env next_entry
+    rpm:    set boot_once=true
+    rpm: else
+    rpm:    set default="0"
+    rpm: fi
+    rpm: 
+    rpm: if [ x"${feature_menuentry_id}" = xy ]; then
+    rpm:   menuentry_id_option="--id"
+    rpm: else
+    rpm:   menuentry_id_option=""
+    rpm: fi
+    rpm: 
+    rpm: export menuentry_id_option
+    rpm: 
+    rpm: if [ "${prev_saved_entry}" ]; then
+    rpm:   set saved_entry="${prev_saved_entry}"
+    rpm:   save_env saved_entry
+    rpm:   set prev_saved_entry=
+    rpm:   save_env prev_saved_entry
+    rpm:   set boot_once=true
+    rpm: fi
+    rpm: 
+    rpm: function savedefault {
+    rpm:   if [ -z "${boot_once}" ]; then
+    rpm:     saved_entry="${chosen}"
+    rpm:     save_env saved_entry
+    rpm:   fi
+    rpm: }
+    rpm: function recordfail {
+    rpm:   set recordfail=1
+    rpm:   if [ -n "${have_grubenv}" ]; then if [ -z "${boot_once}" ]; then save_env recordfail; fi; fi
+    rpm: }
+    rpm: function load_video {
+    rpm:   if [ x$feature_all_video_module = xy ]; then
+    rpm:     insmod all_video
+    rpm:   else
+    rpm:     insmod efi_gop
+    rpm:     insmod efi_uga
+    rpm:     insmod ieee1275_fb
+    rpm:     insmod vbe
+    rpm:     insmod vga
+    rpm:     insmod video_bochs
+    rpm:     insmod video_cirrus
+    rpm:   fi
+    rpm: }
+    rpm: 
+    rpm: terminal_input console
+    rpm: terminal_output console
+    rpm: if [ "${recordfail}" = 1 ] ; then
+    rpm:   set timeout=30
+    rpm: else
+    rpm:   if [ x$feature_timeout_style = xy ] ; then
+    rpm:     set timeout_style=menu
+    rpm:     set timeout=30
+    rpm:   # Fallback normal timeout code in case the timeout_style feature is
+    rpm:   # unavailable.
+    rpm:   else
+    rpm:     set timeout=30
+    rpm:   fi
+    rpm: fi
+    rpm: ### END /etc/grub.d/00_header ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/05_debian_theme ###
+    rpm: set menu_color_normal=white/black
+    rpm: set menu_color_highlight=black/light-gray
+    rpm: ### END /etc/grub.d/05_debian_theme ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/10_linux ###
+    rpm: function gfxmode {
+    rpm: 	set gfxpayload="${1}"
+    rpm: 	if [ "${1}" = "keep" ]; then
+    rpm: 		set vt_handoff=vt.handoff=1
+    rpm: 	else
+    rpm: 		set vt_handoff=
+    rpm: 	fi
+    rpm: }
+    rpm: if [ "${recordfail}" != 1 ]; then
+    rpm:   if [ -e ${prefix}/gfxblacklist.txt ]; then
+    rpm:     if hwmatch ${prefix}/gfxblacklist.txt 3; then
+    rpm:       if [ ${match} = 0 ]; then
+    rpm:         set linux_gfx_mode=keep
+    rpm:       else
+    rpm:         set linux_gfx_mode=text
+    rpm:       fi
+    rpm:     else
+    rpm:       set linux_gfx_mode=text
+    rpm:     fi
+    rpm:   else
+    rpm:     set linux_gfx_mode=keep
+    rpm:   fi
+    rpm: else
+    rpm:   set linux_gfx_mode=text
+    rpm: fi
+    rpm: export linux_gfx_mode
+    rpm: menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 	recordfail
+    rpm: 	load_video
+    rpm: 	gfxmode $linux_gfx_mode
+    rpm: 	insmod gzio
+    rpm: 	if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 	insmod part_gpt
+    rpm: 	insmod ext2
+    rpm: 	set root='hd0,gpt2'
+    rpm: 	if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 	else
+    rpm: 	  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 	fi
+    rpm:         linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro  maybe-ubiquity
+    rpm: 	initrd	/initrd.img-4.15.0-54-generic
+    rpm: }
+    rpm: submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 	menuentry 'Ubuntu, with Linux 4.15.0-54-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-4.15.0-54-generic-advanced-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 		recordfail
+    rpm: 		load_video
+    rpm: 		gfxmode $linux_gfx_mode
+    rpm: 		insmod gzio
+    rpm: 		if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 		insmod part_gpt
+    rpm: 		insmod ext2
+    rpm: 		set root='hd0,gpt2'
+    rpm: 		if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 		  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		else
+    rpm: 		  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		fi
+    rpm: 		echo	'Loading Linux 4.15.0-54-generic ...'
+    rpm: 	        linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro  maybe-ubiquity
+    rpm: 		echo	'Loading initial ramdisk ...'
+    rpm: 		initrd	/initrd.img-4.15.0-54-generic
+    rpm: 	}
+    rpm: 	menuentry 'Ubuntu, with Linux 4.15.0-54-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-4.15.0-54-generic-recovery-7d73a259-1e20-4595-9393-28cd278e1dd7' {
+    rpm: 		recordfail
+    rpm: 		load_video
+    rpm: 		insmod gzio
+    rpm: 		if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+    rpm: 		insmod part_gpt
+    rpm: 		insmod ext2
+    rpm: 		set root='hd0,gpt2'
+    rpm: 		if [ x$feature_platform_search_hint = xy ]; then
+    rpm: 		  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		else
+    rpm: 		  search --no-floppy --fs-uuid --set=root f8a5b93f-d522-4e87-8b3c-aa522e311b38
+    rpm: 		fi
+    rpm: 		echo	'Loading Linux 4.15.0-54-generic ...'
+    rpm: 	        linux	/vmlinuz-4.15.0-54-generic root=/dev/mapper/vg0-root ro recovery nomodeset
+    rpm: 		echo	'Loading initial ramdisk ...'
+    rpm: 		initrd	/initrd.img-4.15.0-54-generic
+    rpm: 	}
+    rpm: }
+    rpm: 
+    rpm: ### END /etc/grub.d/10_linux ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/20_linux_xen ###
+    rpm: 
+    rpm: ### END /etc/grub.d/20_linux_xen ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/30_os-prober ###
+    rpm: ### END /etc/grub.d/30_os-prober ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/30_uefi-firmware ###
+    rpm: ### END /etc/grub.d/30_uefi-firmware ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/40_custom ###
+    rpm: # This file provides an easy way to add custom menu entries.  Simply type the
+    rpm: # menu entries you want to add after this comment.  Be careful not to change
+    rpm: # the 'exec tail' line above.
+    rpm: ### END /etc/grub.d/40_custom ###
+    rpm: 
+    rpm: ### BEGIN /etc/grub.d/41_custom ###
+    rpm: if [ -f  ${config_directory}/custom.cfg ]; then
+    rpm:   source ${config_directory}/custom.cfg
+    rpm: elif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then
+    rpm:   source $prefix/custom.cfg;
+    rpm: fi
+    rpm: ### END /etc/grub.d/41_custom ###
+==> rpm: Running provisioner: shell...
+==> rpm: Waiting for machine to reboot...
+==> rpm: Running provisioner: shell...
+    rpm: Running: /tmp/vagrant-shell20241023-25278-t9nvjo.sh
+    rpm: Смотрим текущее состояние системы (список Volume Group)
+    rpm:   VG  #PV #LV #SN Attr   VSize  VFree
+    rpm:   vg0   1   2   0 wz--n- <9.50g <1.50g
+    rpm: Changing LVM names
+    rpm:   Volume group "vg0" successfully renamed to "ubuntuotus"
+    rpm: update-initramfs: Generating /boot/initrd.img-4.15.0-54-generic
+==> rpm: Running provisioner: shell...
+==> rpm: Waiting for machine to reboot...
+==> rpm: Running provisioner: shell...
+    rpm: Running: /tmp/vagrant-shell20241023-25278-4na2ws.sh
+    rpm: Смотрим новое состояние системы (список Volume Group)
+    rpm:   VG         #PV #LV #SN Attr   VSize  VFree
+    rpm:   ubuntuotus   1   2   0 wz--n- <9.50g <1.50g
